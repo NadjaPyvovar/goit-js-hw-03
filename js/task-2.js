@@ -16,4 +16,4 @@ console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0));
 // Alternative: shorter version of the funtion:
 // const makeArray = (firstArray, secondArray, maxLength) =>
 // [...firstArray, ...secondArray].slice(0, maxLength);
-// console.log('Result out of alternative:>> ', makeArray);
+// console.log('Result out of alternative:>> ', makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3)));
