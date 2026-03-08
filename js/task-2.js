@@ -1,18 +1,19 @@
-function formatMessage(message, maxLength) {
-  if (message.length <= maxLength) {
-    return message;
-  } else {
-    return message.slice(0, maxLength) + '...';
+function makeArray(firstArray, secondArray, maxLength) {
+  const combinedArray = [...firstArray, ...secondArray];
+  if (combinedArray.length > maxLength) {
+    return combinedArray.slice(0, maxLength);
   }
+  return combinedArray;
 }
 
-console.log(formatMessage('Curabitur ligula sapien', 16));
-console.log(formatMessage('Curabitur ligula sapien', 23));
-console.log(formatMessage('Vestibulum facilisis purus nec', 20));
-console.log(formatMessage('Vestibulum facilisis purus nec', 30));
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 15));
-console.log(formatMessage('Nunc sed turpis a felis in nunc fringilla', 41));
+console.log(makeArray(['Mango', 'Poly'], ['Ajax', 'Chelsea'], 3));
+console.log(makeArray(['Mango', 'Poly', 'Houston'], ['Ajax', 'Chelsea'], 4));
+console.log(makeArray(['Mango'], ['Ajax', 'Chelsea', 'Poly', 'Houston'], 3));
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 2));
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus'], 4));
+console.log(makeArray(['Earth', 'Jupiter'], ['Neptune', 'Uranus', 'Venus'], 0));
 
-////using ternary operator and arrow function (syntax based on the example const sum = (num1, num2) => {return num1 + num2;}, where const sum = : assign the function to a variable, (num1, num2): parameters, => : the arrow separating parameters from the function body, {return num1 + num2}: function body)
-//const formatMessage = (message, maxLength) =>
-//message.length <= maxLength ? message : message.slice(0, maxLength) + "...";
+// Alternative: shorter version of the funtion:
+// const makeArray = (firstArray, secondArray, maxLength) =>
+// [...firstArray, ...secondArray].slice(0, maxLength);
+// console.log('Result out of alternative:>> ', makeArray);
